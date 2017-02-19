@@ -234,7 +234,7 @@ The `alt` attribute is what text is shown when the image can't be seen by the us
 ```html
 <!DOCTYPE html>
 <head>
-  <title>Document</title>
+  <title>Info About the Constitution</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -349,17 +349,11 @@ Remember: *If you write HTML perfectly, you'll never need to touch it once you s
 
 Let's mosey on over to my favorite website, [Twitter.com/GA_DC](https://twitter.com/GA_DC). It's pretty great. It's pretty fancy. But what would it be without CSS? Take 1 minute to talk with the people around you about how this wonder of the modern web would look different without CSS, and how that would impact your interactive with the site.
 
-CSS is powerful. There is such a wide breadth of things to learn about CSS and honestly, you could probably teach a whole 12 weeks just its capabilities, nuances, and subtleties. So, the goal of this class isn't to do a rundown of every possible CSS selector, but to have you guys walk away with a solid foundation in how to approach the task of styling your sites. As you use it consistently you realize that, while sometimes [frustrating]( http://gph.is/1heneJM?tc=1), CSS provides a powerful toolkit for making your UI more usable, marketable, and generally awesome!
+CSS is powerful. There is such a wide breadth of things to learn about CSS and honestly, you it could probably take years just to learn its capabilities, nuances and subtleties. So, the goal of this class isn't to do a rundown of every possible CSS selector, but to have you walk away with a solid foundation in how to approach the task of styling your sites. As you use it consistently you realize that, while sometimes [frustrating]( http://gph.is/1heneJM?tc=1), CSS provides a powerful toolkit for making your UI more usable, marketable, and generally awesome!
 
 ## In-line vs head vs stylesheets
 
 At the crux of it all, the primary concept of CSS is to select an HTML element and then do something to it. ie. I want to take the body element, and I want to apply a background color to it.
-
-Let's get started by creating a new html webpage that we'll call `index.html` in `~/wdi/sandbox/css/`:
-
-```bash
-$ touch index.html
-```
 
 Let's throw some dummy content into HTML inside our `index.html`:
 
@@ -376,8 +370,6 @@ Let's throw some dummy content into HTML inside our `index.html`:
 </body>
 </html>
 ```
-
-*Whiteboard definitions as they come up*
 
 So one way we can style elements in HTML is in the tag itself. These are called inline-styles:
 
@@ -408,22 +400,18 @@ This is a bit better. I feel less gross. But feel kinda weird about this one, to
 
 > What if you have both styles in the head *and* inline styles? Which style will be applied? Why is this?
 
-What's the best way? External stylesheets! Let's create a new file called `styles.css`:
-
-```bash
-$ touch styles.css
-```
+What's the best way? External stylesheets! Let's create a new file called `style.css`:
 
 In our `index.html` let's go ahead and link to that stylesheet in the `<head>`:
 
 ```html
 <head>
   <title>CSS!</title>
-  <link rel='stylesheet' href='styles.css'>
+  <link rel='stylesheet' href='style.css'>
 </head>
 ```
 
-In `styles.css`:
+In `style.css`:
 ```css
 p{
   background:blue;
@@ -435,7 +423,7 @@ Ahh, much better. You might be asking yourself, "Self? Isn't this a lot more wor
 
 ### Separation of Concerns
 
-The other big advantage of the stylesheet approach is that it preserve Separation of Concerns. It is possible to style web pages using HTML alone. We did this in the early 2000s using mostly images and table borders. CSS allows us to separate the styles of our website/app from the content and behavior:
+The other big advantage of the stylesheet approach is that it preserves separation of concerns. It is possible to style web pages using HTML alone. We did this in the early 2000s using mostly images and table borders. CSS allows us to separate the styles of our website/app from the content and behavior:
 
 - HTML
   - Content
@@ -444,7 +432,7 @@ The other big advantage of the stylesheet approach is that it preserve Separatio
 - JS
   - Behavior
 
-## CSS Selectors (15 min / 10:25)
+## CSS Selectors
 As you can see, there's more than one place to target elements. There's also multiple WAYS you can target elements. Let's throw some additional content in `index.html`:
 
 ```html
@@ -459,7 +447,7 @@ As you can see, there's more than one place to target elements. There's also mul
 
 All I did here was add two `<p>` elements and added a class of "red" to both and an id of "green" to the last. Additionally I added a `<div>` element with a class of red.
 
-The first thing I want to do is make it so all elements with the class of "red" has a background of red. In our `styles.css`:
+The first thing I want to do is make it so all elements with the class of "red" has a background of red. In our `style.css`:
 
 ```css
 .red {
@@ -467,7 +455,7 @@ The first thing I want to do is make it so all elements with the class of "red" 
 }
 ```
 
-Awesome, but I think I want just the `<p>` elements with that class name to have a background of red. So in `styles.css`:
+Awesome, but I think I want just the `<p>` elements with that class name to have a background of red. So in `style.css`:
 
 ```css
 p.red{
@@ -475,7 +463,7 @@ p.red{
 }
 ```
 
-Finally to select an element with an id you use `#`. I'm going to change the background color of the p element with class "green" in our `styles.css`:
+Finally to select an element with an id you use `#`. I'm going to change the background color of the p element with class "green" in our `style.css`:
 
 ```css
 #green{
@@ -483,9 +471,7 @@ Finally to select an element with an id you use `#`. I'm going to change the bac
 }
 ```
 
-*whiteboard common selectors as well as let them know about references at the bottom of the page*
-
-## CSS Specificity (10 min / 10:40)
+## CSS Specificity
 If I change the css selector from `p.red` back to `.red` you'll notice that the paragraph element with the id of green is still green. This is because of CSS Specificity. While CSS cascades from top to bottom. The CSS that is applied depends on Specificity as well. Take the following example:
 
 ```css
@@ -528,14 +514,14 @@ What the size doesn't include:
 - border
 - margin
 
-Let's go into our existing `index.html` and `styles.css` and add some stuff to illustrate what I mean. In `index.html`:
+Let's go into our existing `index.html` and `style.css` and add some stuff to illustrate what I mean. In `index.html`:
 
 ```html
 <p>This is a paragraph</p>
 <p class="padding">This is a paragraph</p>
 ```
 
-In `styles.css`:
+In `style.css`:
 
 ```css
 p {
@@ -565,7 +551,7 @@ Let go ahead and add `margin: 10px;` and `border: 10px solid black;` to the padd
 
 All these different sizings can be confusing. This can especially be frustrating when you think something's 20 % when in actuality it isn't.  Enter box-sizing.
 
-At the top of our `styles.css`:
+At the top of our `style.css`:
 
 ```css
 * {
@@ -575,8 +561,8 @@ At the top of our `styles.css`:
 
 Now when we refresh, all of our 20% widths are the same regardless of padding. It also includes border! However, it does not include the margin.
 
-## CSS Properties and Values (5 min / 11:05)
-Man, there's alot of them. We've seen many just in this lesson thus far. There are far more than I can cover. Additionally, there's just no way to know them all. Unless you're a CSS savant. Fortunately, there are some great references. Here's just a few!
+## CSS Properties and Values
+Man, there's a lot of them. We've seen many just in this lesson thus far. There are far more than I can cover. Additionally, there's just no way to know them all. Unless you're a CSS savant. Fortunately, there are some great references. Here's just a few!
 
 - [CSS Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
 - [CSS Tricks - SO GOOD](https://css-tricks.com)
@@ -586,7 +572,7 @@ Man, there's alot of them. We've seen many just in this lesson thus far. There a
 - [A to Z CSS Screencasts](http://www.atozcss.com/)
 - [How to Make Your Site Look Half-Decent in Half an Hour](https://24ways.org/2012/how-to-make-your-site-look-half-decent)
 
-## Framing
+## Flexbox
 
 Check out [this GIF](http://2.bp.blogspot.com/-41v6n3Vaf5s/UeRN_XJ0keI/AAAAAAAAN2Y/YxIHhddGiaw/s1600/css.gif). Developers used to feel that way all the time defining page layout using CSS. Why is that?
 
@@ -598,13 +584,11 @@ So layout wasn't much of a concern in the beginning. But as the web has evolved,
 
 Fortunately, Flexbox, a layout mode introduced with CSS3, has slowly but surely become a standard over the past few years. It's designed to ensure that elements on a page behave predictively on varying screen sizes and devices.  
 
-## Problem 1: Vertical Alignment (15 minutes / 0:15)
+## Problem 1: Vertical Alignment
 
 Let's start out by talking about a problem that anybody who has written CSS has had to deal with:
 
-**I have a `div`. I would like to center it vertically and horizontally on my page.** The end result should look something like this...
-
-![centered div](img/centered_div.png)
+**I have a `div`. I would like to center it vertically and horizontally on my page.**
 
 Example on [Codepen](http://codepen.io/awhitley1233/pen/ygJzJW)
 
@@ -672,9 +656,7 @@ body {
 
 View solution [here](http://codepen.io/awhitley1233/pen/EZyvMY)
 
-## How It Works (10 minutes / 0:10)
-
-![flexbox diagram](img/flexbox-diagram.jpg)
+## How It Works
 
 When you declare `display: flex` on a container, it becomes a **flex container**.
 
@@ -699,11 +681,9 @@ Lastly, you can also do nice things like control how you want things to line up 
 
 > That's a lot of CSS properties! Don't worry, you're not expected to memorize all of them. Us instructors need to look them up all the time! [Here's a great resource](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
-## Problem 2: Make the Footer Stick (10 minutes / 0:35)
+## Problem 2: Make the Footer Stick
 
 I want my footer to lie along the bottom of my page. Once I've accomplished that, I want to evenly distribute the content boxes horizontally inside of the `<main>` element.
-
-![flexbox layout](img/flex_box_layout.png)
 
 [Example on CodePen](http://codepen.io/awhitley1233/pen/ygJzqy)
 
@@ -719,9 +699,6 @@ I want my footer to lie along the bottom of my page. Once I've accomplished that
     <section>Content 2</section>
     <section>Content 3</section>
   </main>
-  <footer>
-    CodePen by Andrew Whitley
-  </footer>
 </html>
 ```
 
@@ -795,11 +772,9 @@ main {
 
 ## CSS Animations
 
-So far, we've used JavaScript and jQuery to make elements move around on our page. While easy to do, using JavaScript to animate will slow our page load time in noticiable ways. It can also be messy to mix cosmetic code in with the core of your frontend functionality.
+CSS Animations are a great way to add a layer of polish to your design. Good design inspires trust, so adding little touches to your work is a great way to impress users (and potential employers!).
 
-Luckily, CSS Animations allows us to handle animations where they belong - in the stylesheet! CSS Animations have a much lower impact on page loads, and are a great way to add a layer of polish to your design. Good design inpsires trust, so adding little touches to your work is a great way to impress users (and potential employers!).
-
-## Concept (10 minutes)
+## Concept
 
 CSS uses the same basic concepts found in hand-drawn animation - Keyframes:
 
@@ -807,25 +782,59 @@ CSS uses the same basic concepts found in hand-drawn animation - Keyframes:
 
 In the above image, the the left and right-most drawings are **Keyframes** - they define the starting or ending point of a smooth transition. The drawings between the left and right-most image are **Inbetweens** - they don't have to be drawn on a storyboard, because the animator can assume what they will look like without a visual reference.
 
-In web-based animations, Keframes work the same way - the represent the begining or ending state of the element being animated. However, our Inbetweens will be generated by code, instead of being filled in by hand later.
+In web-based animations, Keyframes work the same way - the represent the beginning or ending state of the element being animated. However, our Inbetweens will be generated by code, instead of being filled in by hand later.
 
-Let's take a look at the starter code in this repo. You'll find some beautifully designed CSS attached to the index file, greeting you with a nice message. But there's a second design hiding in our file, that we can't yet see! We have to add the class `alt` first.
-Let's use a jquery toggleClass click function to add/remove the class on click:
+## Transitions
 
-```javascript
-	$( "#greeting" ).click(function() {
-	  $( "#greeting" ).toggleClass( "alt" );
-	});
+**Transitions** let us tell the browser how to change a property over time.
+
+Let's add some starter code:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Animations</title>
+	<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light|Shrikhand" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<div id="greeting">Hello Friend.</div>
+
+</body>
+</html>
 ```
-Now clicking on the greetings div will toggle between the two CSS styles. But, there's no animation - its more like a flipbook, right?
 
-That's because these two class states represent our keyframes. What we have right now is kind of like watching a storyboard instead of animated movie - we get the idea, but its not much fun to watch.
-
-So now that we have Keyframes, how do we generate our inbetweens? With CSS, there's a few different ways.
-
-## Transitions (10 minutes)
-
-**Transitions** let us tell the browser how to change a property over time. Let's add a new property to the #greeting CSS:
+```css
+*{
+	box-sizing: border-box;
+}
+#greeting {
+	width: 400px;
+  height: 400px;
+  background: #332532;
+  border: 8px solid #F77A52;
+  color: #F77A52;
+  font-family: 'Shrikhand', cursive;
+  font-size: 70px;
+  padding: 40px;
+  text-align: left;
+}
+#greeting.alt {
+	width: 600px;
+	height: 600px;
+	background: #CAFCD8;
+	border: 20px solid #04BFBF;
+	color: #04BFBF;
+	font-family: 'Shadows Into Light', cursive;
+	font-size: 130px;
+	line-height: 1;
+	padding: 200px 60px 60px 60px;
+	text-align: right;
+}
+```
+Let's add a new property to the #greeting CSS:
 
 ```css
 	transition: all 2s ease;
