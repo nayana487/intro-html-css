@@ -699,6 +699,9 @@ I want my footer to lie along the bottom of my page. Once I've accomplished that
     <section>Content 2</section>
     <section>Content 3</section>
   </main>
+  <footer>
+    Nayana Davis Productions
+  </footer>
 </html>
 ```
 
