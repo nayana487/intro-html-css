@@ -14,7 +14,7 @@ You can learn more about Atom [here.](https://github.com/ga-wdi-lessons/atom-int
 
 ### Now we're ready to learn HTML
 
-You may think you know HTML, but you're probably doing it *wrong*. HTML done right makes creating a website a breeze. HTML done wrong means you do lots and lots of deleting, writing a little bit, and deleting again.
+HTML done right makes creating a website a breeze. HTML done wrong means you do lots and lots of deleting, writing a little bit, and deleting again.
 
 Let's say you want to make a webpage of your favorite jokes. We're going to do this using **fake HTML**. (Don't bother writing it down!)
 
@@ -217,9 +217,7 @@ For a great example, go to http://www.theoatmeal.com, and look at the source cod
 
 ## HTML Tag Matching
 
-##### [See if you can match the descriptions of elements and special characters on the left to what they describe on the right.](http://ga-dc.github.io/html_tag_matching/)
-
-Remember: an element's name is usually an abbreviation. Click the blue circle on the bottom-right to scramble the items.
+An element's name is usually an abbreviation.
 
 - `<a>`: One of my least favorite tags, because an "anchor" is what we always think of as a "link" -- and there's a `<link>` that does something completely unrelated. Remember: **an anchor is a link**. To make an anchor actually go somewhere when you click on it, you give it an attribute called `href` (which stands for *hypertext reference*, which isn't important). For example: `<a href="http://google.com">Google</a>`
 
@@ -234,6 +232,12 @@ The `alt` attribute is what text is shown when the image can't be seen by the us
 - `<h1>`: The `h` stands for "headline", which is a bit of text that introduces other text. There's `<h1>` through `<h6>`, which the numbers indicating the level of "importance". For example:
 
 ```html
+<!DOCTYPE html>
+<head>
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
 <h1>The US Constitution</h1>
   <h2>Article I</h2>
     <h3>Section A</h3>
@@ -244,6 +248,7 @@ The `alt` attribute is what text is shown when the image can't be seen by the us
       <h4>Subsection 1</h4>
         <h5>Clause i</h5>
           <h6>Subclause a</h6>
+</body>
 ```
 
 Generally, a page will have only one `<h1>` because that's the *most important* headline, meaning it should introduce the rest of the page.
@@ -289,7 +294,7 @@ This is *bad*:
 ```html
 <ul>
   <h1>My favorite things</h1>
-  <li>Whiskerse on kittens</li>
+  <li>Whiskers on kittens</li>
   <li>Brown paper packages</li>
   <li>Schnitzel with noodles</li>
 </ul>
@@ -340,15 +345,13 @@ This is why HTML is usually written first in one file, and then its CSS is writt
 
 Remember: *If you write HTML perfectly, you'll never need to touch it once you start writing CSS.*
 
-## The Power of CSS (5 min / 10:00)
+## The Power of CSS
 
-To start this lesson, I want to mosey on over to my favorite website, [Twitter.com/GA_DC](https://twitter.com/GA_DC). It's pretty great. It's pretty fancy. But what would it be without CSS? Take 1 minute to talk with the people around you about how this wonder of the modern web would look different without CSS, and how that would impact your interactive with the site.
+Let's mosey on over to my favorite website, [Twitter.com/GA_DC](https://twitter.com/GA_DC). It's pretty great. It's pretty fancy. But what would it be without CSS? Take 1 minute to talk with the people around you about how this wonder of the modern web would look different without CSS, and how that would impact your interactive with the site.
 
-> ST-WG: Share some ideas, then mute the stylesheets in Dev Tools and discuss anything surprising.
+CSS is powerful. There is such a wide breadth of things to learn about CSS and honestly, you could probably teach a whole 12 weeks just its capabilities, nuances, and subtleties. So, the goal of this class isn't to do a rundown of every possible CSS selector, but to have you guys walk away with a solid foundation in how to approach the task of styling your sites. As you use it consistently you realize that, while sometimes [frustrating]( http://gph.is/1heneJM?tc=1), CSS provides a powerful toolkit for making your UI more usable, marketable, and generally awesome!
 
-CSS is powerful. There is such a wide breadth of things to learn about CSS and honestly, you could probably teach a whole 12 weeks just its capabilities, nuances, and subtleties. So, the goal of this class isn't to do a rundown of every possible CSS selector, but to have you guys walk away with a solid foundation in how to approach the task of styling your sites. As you use it consistently you realize that, while sometimes [frustrating]( http://gph.is/1heneJM?tc=1), CSS provides a powerful toolkit for making your UI more usuable, marketable, and generally awesome!
-
-## In-line vs head vs stylesheets (20 min / 10:05)
+## In-line vs head vs stylesheets
 
 At the crux of it all, the primary concept of CSS is to select an HTML element and then do something to it. ie. I want to take the body element, and I want to apply a background color to it.
 
@@ -583,7 +586,214 @@ Man, there's alot of them. We've seen many just in this lesson thus far. There a
 - [A to Z CSS Screencasts](http://www.atozcss.com/)
 - [How to Make Your Site Look Half-Decent in Half an Hour](https://24ways.org/2012/how-to-make-your-site-look-half-decent)
 
-## Intro (5 minutes)
+## Framing
+
+Check out [this GIF](http://2.bp.blogspot.com/-41v6n3Vaf5s/UeRN_XJ0keI/AAAAAAAAN2Y/YxIHhddGiaw/s1600/css.gif). Developers used to feel that way all the time defining page layout using CSS. Why is that?
+
+HTML was created as a document-oriented language. CSS emerged as a way to make an HTML file appear more document-like. Literally, like something you would make in Microsoft Word.
+
+So layout wasn't much of a concern in the beginning. But as the web has evolved, so have the design needs of developers. Unfortunately, it takes a while for CSS -- and by that we mean the CSS Working Group -- to catch up with those needs.
+
+> It's difficult to establish new CSS standards. The [CSS Working Group](https://en.wikipedia.org/wiki/CSS_Working_Group) has a hard time agreeing on anything, especially cross-browser standards.
+
+Fortunately, Flexbox, a layout mode introduced with CSS3, has slowly but surely become a standard over the past few years. It's designed to ensure that elements on a page behave predictively on varying screen sizes and devices.  
+
+## Problem 1: Vertical Alignment (15 minutes / 0:15)
+
+Let's start out by talking about a problem that anybody who has written CSS has had to deal with:
+
+**I have a `div`. I would like to center it vertically and horizontally on my page.** The end result should look something like this...
+
+![centered div](img/centered_div.png)
+
+Example on [Codepen](http://codepen.io/awhitley1233/pen/ygJzJW)
+
+#### You Tell Me: What Should I Try?
+
+```html
+<html>
+  <body>
+    <div> Div 1 </div>
+  </body>
+</html>
+```
+
+```CSS
+body {
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  background: #990012;
+  color: #FFFFFF;
+  border-radius: 10px;
+  font: 14pt Comic Sans MS;
+  text-align: center;
+  line-height: 100px;
+}
+```
+
+<details>
+  <summary><strong>These might work...</strong></summary>
+
+  > **Padding**: The simplest approach would be to set equal padding on the top and bottom of the container (body) element. We would need to know the exact height of the element and container in order to get this exactly right. This can also get tedious when there is more than one element in a container.
+  >
+  > **Margin**: Similarly, we could add some margin to the element we are trying to center. The same issues remain.
+  >
+  > **Absolute Positioning**: You could use properties like `top` and `left` to position an element in the center. This, however, removes it from the document flow.
+
+</details>
+
+<details>
+  <summary><strong>These could work in other scenarios...</strong></summary>
+
+  > **`line-height`**: When vertically centering a single line of text, you can set the line-height to that of the whole container.
+  >
+  > **`vertical-align`**: Used to align words within a line of text (e.g., superscript, subscript).
+
+</details>
+
+> The tough part is that how to vertically center a element depends on its context. Depending on your situation, one or more of the above techniques could work. [Here's an enlightening post on the matter](https://css-tricks.com/centering-in-the-unknown/).
+
+### Flexbox to the Rescue
+
+```CSS
+body {
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
+
+View solution [here](http://codepen.io/awhitley1233/pen/EZyvMY)
+
+## How It Works (10 minutes / 0:10)
+
+![flexbox diagram](img/flexbox-diagram.jpg)
+
+When you declare `display: flex` on a container, it becomes a **flex container**.
+
+First, you use `flex-direction` to indicate whether you want the items in the container -- the **flex items** -- to "read" left-to-right (`row`), right-to-left (`row-reverse`), top-to-bottom (`column`), **or** bottom-to-top (`column-reverse`).
+
+When you specify a flex-direction, you can think of it as placing an axis in that direction across your flex container. So if you use `flex-direction: row` or `row-reverse`, this **main axis** will be the same as the X-axis (horizontal) on a graph. If you use `flex-direction: column` or `column-reverse`, the **main axis** will be the Y-axis.
+
+Then, you determine how you want to align or **justify** the items along this main axis using the `justify-content` property. It'll do nice things for you like let you put even spacing between all the items (`space-between` and `space-around`).
+
+Finally, you control how you align the items along the axis that goes across the main axis -- the **cross axis**, if you will -- with the `align-items` property. If you have `flex-direction:row`, the main axis is the X-axis, and the cross-axis is the Y-axis.
+
+Lastly, you can also do nice things like control how you want things to line up across the cross-axis by using `align-content`, such as `space-between` and `space-around`.
+
+### In Summary...
+
+| Property | What's It Do? | Examples |
+|----------|---------------|----------|
+| **display**  |               | `flex`   |
+| **[flex-direction](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction)** | Sets the directional flow of flex items | `row`, `column` |
+| **[justify-content](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content)** | Align along flex-direction (main axis) | `center`, `space-between` |
+| **[align-items](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items)** | Align along not-flex-direction (cross axis) | `flex-start`, `center` |
+
+> That's a lot of CSS properties! Don't worry, you're not expected to memorize all of them. Us instructors need to look them up all the time! [Here's a great resource](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+
+## Problem 2: Make the Footer Stick (10 minutes / 0:35)
+
+I want my footer to lie along the bottom of my page. Once I've accomplished that, I want to evenly distribute the content boxes horizontally inside of the `<main>` element.
+
+![flexbox layout](img/flex_box_layout.png)
+
+[Example on CodePen](http://codepen.io/awhitley1233/pen/ygJzqy)
+
+#### You Tell Me: What Should I Try?
+
+```html
+<html>
+  <header>
+    FlexBox
+  </header>
+  <main>
+    <section>Content 1</section>
+    <section>Content 2</section>
+    <section>Content 3</section>
+  </main>
+  <footer>
+    CodePen by Andrew Whitley
+  </footer>
+</html>
+```
+
+```CSS
+body {
+  min-height: 100vh;
+  margin: 0 auto;
+  font: 12pt Comic Sans MS;
+}
+
+header, footer {
+  width: 100%;
+  height: 30px;
+  background: #000000;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 30px;
+}
+
+main {
+  background: #D3D3D3;
+}
+
+section {
+  width: 100px;
+  background: #990012;
+  color: #FFFFFF;
+  border-radius: 10px;
+  margin: 5px;
+  text-align: center;
+  line-height: 100px;
+}
+```
+
+Making the footer lie against the bottom of the screen is pretty easy: just use absolute or fixed positioning. However, using absolute or fixed positioning means everything else on the page ignores my footer. The text of `<main>` could easily run under the footer. We want the text to "push" the footer to the end of the page.
+
+### Flexbox to the Rescue
+
+```CSS
+body {
+  min-height: 100vh;
+  margin: 0 auto;
+  font: 12pt Comic Sans MS;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+```
+
+<details>
+  <summary><strong>What's the main axis of the `<body>`on here? What about the cross axis?</strong></summary>
+
+  > Main: y-axis. Cross: x-axis.
+
+</details>
+
+<br />
+
+Now let's horizontally distribute the `<section>` elements containing the page's content inside of the `<main>`. What element should we style?
+
+```CSS
+main {
+  background: #D3D3D3;
+  display: flex;
+  justify-content: space-around;
+}
+```
+
+[Solution on CodePen](http://codepen.io/awhitley1233/pen/PWzOPg)
+
+
+## CSS Animations
 
 So far, we've used JavaScript and jQuery to make elements move around on our page. While easy to do, using JavaScript to animate will slow our page load time in noticiable ways. It can also be messy to mix cosmetic code in with the core of your frontend functionality.
 
