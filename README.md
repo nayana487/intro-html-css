@@ -821,7 +821,7 @@ Let's add some starter code:
   padding: 40px;
   text-align: left;
 }
-#greeting.alt {
+#greeting:hover {
 	width: 600px;
 	height: 600px;
 	background: #CAFCD8;
