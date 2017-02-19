@@ -850,7 +850,7 @@ Now let's reload and check out our animation - way smoother! Feel free to play w
 You'll notice that some properties animated their transition, while others didn't - for instance, our background color transitioned beautifully through the color spectrum, but our font-family simply toggled into the new font. That's because font-family can't be animated - its way to complex for a browser to figure out on its own. However, while there are some values like font-family that can't be animated, you'll find that most cosmetic properties can be.
 
 
-## Keyframe Animations (10 minutes)
+## Keyframe Animations
 
 But why stop there? We can go further!
 
@@ -878,7 +878,7 @@ Let's write a keyframe animation that will make our greeting bounce:
 		}
 	}
 ```
-Here, we're able to see our keyframe sturcture even more clearly - they're broken up by percentages, 100% being the complete duration of the animation (we'll set the specific timing in our animation call). We can add as many keyframes as we want, and as few as two (0 and 100%). At each point, we can specify a new set of css properties.
+Here, we're able to see our keyframe structure even more clearly - they're broken up by percentages, 100% being the complete duration of the animation (we'll set the specific timing in our animation call). We can add as many keyframes as we want, and as few as two (0 and 100%). At each point, we can specify a new set of css properties.
 
 While we could go nuts and add all sorts of property changes in here, I would encourage you to think of Keyframe Animations the same way you would JS prototypal functions - they work best when they are clear, simple, and extensible. Our 'bounce' animation serves a single function - to bounce an element. By keeping it style-neutral, we allow ourselves to use the animation on lots of different elements.
 
@@ -907,7 +907,7 @@ As a final step, let's add our new `animated` class to our click function so we 
 
 Wow! That's . . . interesting. It's bouncing alright, but it doesn't look very natural. Maybe there's some more CSS properties that can help . . .
 
-## Transforms (10 minutes)
+## Transforms
 
 **Transforms** allow you to rotate, skew, and pivot your HTML elements in 3D space! While you'll still be rendering your result on a 2D canvas - your computer screen - you can still move your object around like it were a physical object. This is both exciting and terrifying, as the CSS tranform property has [almost 2 dozen unique value types](http://www.w3schools.com/cssref/css3_pr_transform.asp).
 
