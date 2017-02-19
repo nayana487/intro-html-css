@@ -4,19 +4,13 @@ All you need to build a website is a computer, and two pieces of software: a web
 
 ### Text editors
 
-When I started, my text editor was TextEdit, which is in the Applications folder of any Mac. The Windows equivalent is NotePad.
+As programmers, our main jobs really is to write and manipulate lots of text across lots of files. Thus, you'll be spending a lot of time in your text editor, and productivity gains in using it will have a very large impact in your efficiency.
 
-##### Go ahead and open TextEdit on your Mac, or Notepad on your PC. On a Mac, it's inside your Applications folder. You can also use Spotlight to find it.
+It's not just about raw speed though, getting comfortable using our text editor will allow us to enter and stay in 'flow', where our code output keeps up with our thoughts.
 
-The text editor you use doesn't matter. The only thing that matters is that it has to be *plain text*.
+The preferred text editor at General Assembly is **Atom.**  
 
-A text editor is *not* plain text if it secretly hides a bunch of code inside the files you make. This is how Word records whether text should be bold, italic, red, blue, and so on. This is called *rich text*.
-
-A text editor is *plain text* if, when you look at a file, you see *everything* inside it -- no hidden code.
-
-For example, if I create and save a blank Word document, it's actually about 20 kilobytes. If I create and save a blank document in TextEdit, it's 0 bytes. If I look at a Word document in TextEdit, I see a heinous mess, which is all the hidden code.
-
-##### Please go to `File > Preferences` in TextEdit. In the `New Document` tab, make sure `Plain Text` is selected at the top instead of `Rich Text`. Also, un-select all of the `Options` at the bottom. On the `Open and Save` tab, select `Display HTML files as HTML code instead of formatted text`. Then, quit and re-open TextEdit.
+You can learn more about Atom [here.](https://github.com/ga-wdi-lessons/atom-intro)
 
 ### Now we're ready to learn HTML
 
