@@ -899,14 +899,6 @@ The above call runs the animation as soon as the class `animated` is added to ou
 
 [http://www.w3schools.com/cssref/css3_pr_animation-direction.asp](http://www.w3schools.com/cssref/css3_pr_animation-direction.asp)
 
-As a final step, let's add our new `animated` class to our click function so we can test it out:
-
-```javascript
-	$( "#greeting" ).toggleClass( "animated" );
-```
-
-Wow! That's . . . interesting. It's bouncing alright, but it doesn't look very natural. Maybe there's some more CSS properties that can help . . .
-
 ## Transforms
 
 **Transforms** allow you to rotate, skew, and pivot your HTML elements in 3D space! While you'll still be rendering your result on a 2D canvas - your computer screen - you can still move your object around like it were a physical object. This is both exciting and terrifying, as the CSS tranform property has [almost 2 dozen unique value types](http://www.w3schools.com/cssref/css3_pr_transform.asp).
