@@ -10,14 +10,7 @@
   text-align: left;
 }
 #greeting:hover{
-	width: 600px;
-	height: 600px;
-	background: #CAFCD8;
-	border: 20px solid #04BFBF;
-	color: #04BFBF;
-	font-family: 'Shadows Into Light', cursive;
-	font-size: 130px;
-	line-height: 1;
-	padding: 200px 60px 60px 60px;
-	text-align: right;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }

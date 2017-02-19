@@ -885,7 +885,7 @@ While we could go nuts and add all sorts of property changes in here, I would en
 Now that we have a basic animation set up, let's call it on our `#greetings` element:
 
 ```css
-	#greeting.animated {
+	#greeting:hover {
 		animation-name: bounce;
 		animation-duration: .5s; /* or: Xms */
 		animation-iteration-count: 10;
@@ -915,7 +915,7 @@ My suggestion? Keep it simple at first, then see how deep the rabbit hole goes. 
 
 
 ```css
-	#greeting.rotate {
+	#greeting:hover {
 		-webkit-transform: rotateY(180deg);
 		-moz-transform: rotateY(180deg);   
 		transform: rotateY(180deg);
